@@ -38,14 +38,14 @@ body {
 
 /* Form Elements */
 input {
-    width: 85%;
+    width: 90%;
     padding: 10px;
+    padding-right: 40px;
     margin: 8px auto;
     display: block;
     text-transform: uppercase;
     box-sizing: border-box;
 }
-
 button {
     width: 95%;
     padding: 12px;
@@ -64,17 +64,18 @@ button:hover {
 /* Password box and icon */
 .password-box {
     position: relative;
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
-    overflow: hidden;
 }
-
 .view-icon {
     position: absolute;
-    right: 5Spx;
-    top: 13px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
-    font-size: 12px;
+    font-size: 16px;
+    user-select: none;
+    color: #aaa;
 }
 
 /* Navigation */
