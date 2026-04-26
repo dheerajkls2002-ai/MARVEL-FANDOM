@@ -297,7 +297,7 @@ button:hover {
         <h2>LOGIN</h2>
         <input id="username" placeholder="USERNAME" autocomplete="username">
         <div class="password-box">
-            <input id="password" type="password" placeholder="PASSWORD">
+            < input id="password" type="password" placeholder="PASSWORD" autocomplete="current-password">
             <span class="view-icon" onclick="togglePassword('password', this)">👁️</span>
         </div>
         <button onclick="login()">LOGIN</button>
@@ -309,13 +309,13 @@ button:hover {
 <div id="signupPage" class="center-box" style="display:none;">
     <div class="box">
         <h2>SIGN UP</h2>
-        <input id="newUser" placeholder="NEW USERNAME">
+        < input id="newUser" placeholder="NEW USERNAME" autocomplete="username">
         <div class="password-box">
-            <input id="newPass" type="password" placeholder="NEW PASSWORD">
+            < input id="newPass" type="password" placeholder="NEW PASSWORD" autocomplete ="new-password" >
             <span class="view-icon" onclick="togglePassword('newPass', this)">👁️</span>
         </div>
         <div class="password-box">
-            <input id="confirmPass" type="password" placeholder="CONFIRM PASSWORD" onkeyup="checkMatch()">
+            <input id="confirmPass" type="password" placeholder="CONFIRM PASSWORD" autocomplete ="new-password" onkeyup="checkMatch()">
             <span class="view-icon" onclick="togglePassword('confirmPass', this)">👁️</span>
         </div>
         <div class="match-msg" id="matchMsg"></div>
