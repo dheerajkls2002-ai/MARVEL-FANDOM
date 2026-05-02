@@ -5,7 +5,7 @@
 <link rel="icon" href="data:,">
 <title>MARVEL FANDOM</title>
 <style>
-/* Global */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -14,7 +14,6 @@ body {
     text-align: center;
 }
 
-/* Layout */
 .page {
     display: none;
     padding: 20px;
@@ -36,7 +35,6 @@ body {
     max-width: 90%;
     box-sizing: border-box;
 }
-    /* Form Elements */
 input {
     width: calc(100% - 20px);
     padding: 10px;
@@ -60,7 +58,6 @@ button:hover {
     background: #ff4444;
 }
 
-/* Password box and icon */
 .password-box {
     position: relative;
     width: 100%;
@@ -75,7 +72,6 @@ button:hover {
     user-select: none;
     color: #aaa;
 }
-/* Navigation */
 .nav {
     display: flex;
     justify-content: space-around;
@@ -90,7 +86,6 @@ button:hover {
     font-size: 18px;
 }
 
-/* Cards */
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -119,7 +114,6 @@ button:hover {
     background: #222;
 }
 
-/* Popups */
 .popup {
     display: none;
     position: fixed;
@@ -147,15 +141,12 @@ button:hover {
     margin-top: 20px;
 }
 
-/* Content Display */
 .content-box {
     max-width: 800px;
     margin: auto;
     line-height: 25px;
 }
-/* ===== RESPONSIVE ===== */
 
-/* Tablet */
 @media (max-width: 768px) {
     .nav button {
         font-size: 14px;
@@ -176,7 +167,6 @@ button:hover {
     }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
     .box {
         width: 90%;
@@ -215,7 +205,6 @@ button:hover {
     }
 }
 
-/* Very small screens */
 @media (max-width: 340px) {
     .nav button {
         font-size: 11px;
@@ -226,7 +215,7 @@ button:hover {
         max-width: 200px;
     }
 }
-/* Popup nav buttons */
+
 .popup-nav {
     display: none;
     position: fixed;
@@ -267,7 +256,6 @@ button:hover {
     margin-top: 5px;
 }
 
-/* Eye icon fix */
 .view-icon {
     position: absolute;
     right: 12px;
@@ -279,7 +267,6 @@ button:hover {
     color: #aaa;
 }
 
-/* Confirm password match message */
 .match-msg {
     font-size: 11px;
     margin: 2px 8px;
@@ -292,8 +279,6 @@ button:hover {
 
 <body>
 
-<!-- LOGIN -->
-<!-- LOGIN -->
 <div id="loginPage" class="center-box">
     <div class="box">
         <h2>LOGIN</h2>
@@ -307,7 +292,6 @@ button:hover {
     </div>
 </div>
 
-<!-- SIGNUP -->
 <div id="signupPage" class="center-box" style="display:none;">
     <div class="box">
         <h2>SIGN UP</h2>
@@ -326,7 +310,7 @@ button:hover {
     </div>
 </div>
 
-<!-- NAVIGATION -->
+
 <div id="navbar" class="nav" style="display:none;">
     <button onclick="showPage('home')">HOME</button>
     <button onclick="showPage('about')">ABOUT</button>
@@ -334,7 +318,6 @@ button:hover {
     <button onclick="openNavPopup()">☰ MENU</button>
 </div>
 
-<!-- NAV POPUP -->
 <div id="navPopup" class="popup-nav">
     <div class="popup-nav-box">
         <h3>⚡ MARVEL MENU</h3>
@@ -346,7 +329,7 @@ button:hover {
     </div>
 </div>
 
-<!-- HOME -->
+
 <div id="home" class="page">
 <h2>🏠 HOME</h2>
 <div class="content-box">
@@ -365,7 +348,6 @@ button:hover {
 </div>
 </div>
 
-<!-- ABOUT -->
 <div id="about" class="page">
 <h2>ℹ️ ABOUT</h2>
 <div class="content-box">
@@ -397,14 +379,12 @@ button:hover {
 </div>
 </div>
 
-<!-- CHARACTERS -->
 <div id="character" class="page">
 <h2>CHARACTERS</h2>
 <input type="text" id="searchBar" placeholder="SEARCH CHARACTER..." onkeyup="searchCharacters()">
 <div class="card-container" id="cardContainer"></div>
 </div>
 
-<!-- POPUP -->
 <div id="popup" class="popup">
 <div class="popup-box">
 <h2 id="popName"></h2>
@@ -424,7 +404,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/fireba
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore, doc, setDoc, addDoc, collection, serverTimestamp, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// ============ YOUR CONFIG ============
+
 const firebaseConfig = {
   apiKey: "AIzaSyCAQVUK10SmsQz3VeG6Hrao1xXpi1Sp7H0",
   authDomain: "fandom-site.firebaseapp.com",
@@ -434,12 +414,12 @@ const firebaseConfig = {
   appId: "1:35808756832:web:354654e19602a112af2f05"
 };
 
-// ============ INITIALIZE FIREBASE ============
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// ============ CHARACTER DATA ============
+
 const characters = [
     { name:'IRON MAN', img:'images/ironman.webp', abilities:'GENIUS, SUIT, WEAPONS', past:'WEAPONS MAKER', present:'AVENGER', future:'LEGEND', spouse:'PEPPER', children:'MORGAN'},
     { name:'CAPTAIN AMERICA', img:'images/captainamerica.webp', abilities:'SUPER SOLDIER', past:'WEAK SOLDIER', present:'LEADER', future:'RETIREMENT', spouse:'PEGGY', children:'UNKNOWN'},
@@ -457,7 +437,7 @@ const characters = [
     { name:'GAMORA', img:'images/gamora.webp', abilities:'COMBAT', past:'ASSASSIN', present:'GUARDIAN', future:'UNKNOWN', spouse:'STAR-LORD', children:'NONE'}
 ];
 
-// ============ SIGNUP — NOW USES FIREBASE ============
+
 window.signup = async function() {
     let username = document.getElementById('newUser').value.trim();
     let p1 = document.getElementById('newPass').value;
@@ -475,13 +455,13 @@ window.signup = async function() {
         let userCredential = await createUserWithEmailAndPassword(auth, fakeEmail, p1);
         let user = userCredential.user;
 
-        // Save to Firestore users collection
+        
         await setDoc(doc(db, "users", user.uid), {
             username: username,
             createdAt: serverTimestamp()
         });
 
-        // Save to Firestore logs collection
+        
         await addDoc(collection(db, "logs"), {
             uid: user.uid,
             username: username,
@@ -501,7 +481,7 @@ window.signup = async function() {
     }
 }
 
-// ============ LOGIN — NOW USES FIREBASE ============
+
 window.login = async function() {
     let username = document.getElementById('username').value.trim();
     let password = document.getElementById('password').value;
@@ -514,7 +494,7 @@ window.login = async function() {
         let userCredential = await signInWithEmailAndPassword(auth, fakeEmail, password);
         let user = userCredential.user;
 
-        // Log login to Firestore
+
         await addDoc(collection(db, "logs"), {
             uid: user.uid,
             username: username,
@@ -532,7 +512,7 @@ window.login = async function() {
     }
 }
 
-// ============ LOGOUT — NOW USES FIREBASE ============
+
 window.logout = async function() {
     let user = auth.currentUser;
 
@@ -548,7 +528,7 @@ window.logout = async function() {
     location.reload();
 }
 
-// ============ PAGE NAVIGATION ============
+
 window.showLogin = function() {
     document.getElementById('loginPage').style.display = "flex";
     document.getElementById('signupPage').style.display = "none";
@@ -570,7 +550,7 @@ window.onpopstate = function(event) {
     if (event.state && event.state.page) showPage(event.state.page, false);
 };
 
-// ============ NAV POPUP ============
+
 window.openNavPopup = function() {
     document.getElementById('navPopup').style.display = "flex";
 }
@@ -579,7 +559,7 @@ window.closeNavPopup = function() {
     document.getElementById('navPopup').style.display = "none";
 }
 
-// ============ PASSWORD ============
+
 window.togglePassword = function(id, icon) {
     let field = document.getElementById(id);
     field.type = field.type === "password" ? "text" : "password";
@@ -600,12 +580,12 @@ window.checkMatch = function() {
     }
 }
 
-// ============ ENTER KEY ============
+
 document.addEventListener("keydown", e => {
     if (e.key === "Enter") login();
 });
 
-// ============ CARDS ============
+
 function loadCards(data) {
     let container = document.getElementById('cardContainer');
     container.innerHTML = "";
@@ -624,7 +604,7 @@ window.searchCharacters = function() {
     loadCards(characters.filter(c => c.name.includes(text)));
 }
 
-// ============ CHARACTER POPUP ============
+
 window.openPopup = function(n) {
     let c = characters.find(x => x.name === n);
     document.getElementById('popName').innerText = c.name;
